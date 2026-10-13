@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "qa-results": {
+      "command": "/FULL/PATH/TO/qa-results-mcp-server/venv/bin/python",
+      "args": ["-m", "qa_results_mcp.server"],
+      "cwd": "/FULL/PATH/TO/qa-results-mcp-server",
+      "env": {
+        "RESULTS_DIR": "/FULL/PATH/TO/claude-eval-framework/results"
+      }
+    }
+  }
+}

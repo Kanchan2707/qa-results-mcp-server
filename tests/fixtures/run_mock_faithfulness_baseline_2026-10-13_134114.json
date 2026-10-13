@@ -1,0 +1,169 @@
+{
+  "mode": "mock",
+  "suite": "faithfulness.yaml",
+  "model": "mock-no-api-call",
+  "system_prompt_name": "baseline",
+  "system_prompt": "You are a helpful assistant. Answer the user's question accurately and follow any formatting instructions exactly.",
+  "run_timestamp": "2026-10-13T17:41:14.604627+00:00",
+  "total_tests": 6,
+  "passed": 5,
+  "failed": 1,
+  "pass_rate": 0.833,
+  "by_tag": {
+    "faithfulness": {
+      "total": 6,
+      "passed": 5,
+      "judge_score_sum": 26,
+      "judge_score_count": 6
+    }
+  },
+  "metrics": {
+    "faithfulness_rate": {
+      "count": 5,
+      "total": 6,
+      "rate": 0.833,
+      "direction": "higher is better",
+      "avg_judge_score": 4.33
+    }
+  },
+  "results": [
+    {
+      "id": "FT001",
+      "scorer": "faithfulness",
+      "tags": [
+        "faithfulness"
+      ],
+      "prompt": "How many days do customers have to return an item?",
+      "context": "Acme Corp's return policy: Items can be returned within 30 days of purchase with a receipt. Opened software cannot be returned. Refunds are issued to the original payment method within 5 business days.",
+      "response": "Customers have 30 days from purchase to return an item, with a receipt.",
+      "passed": true,
+      "detail": "judge_score=5/5 (min 4): Mock judge: matches the passage.",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 84,
+        "output_tokens": 13
+      },
+      "judge_score": 5,
+      "judge_reason": "Mock judge: matches the passage.",
+      "judge_usage": {
+        "input_tokens": 130,
+        "output_tokens": 5
+      }
+    },
+    {
+      "id": "FT002",
+      "scorer": "faithfulness",
+      "tags": [
+        "faithfulness"
+      ],
+      "prompt": "Can opened software be returned?",
+      "context": "Acme Corp's return policy: Items can be returned within 30 days of purchase with a receipt. Opened software cannot be returned. Refunds are issued to the original payment method within 5 business days.",
+      "response": "No. According to the passage, opened software cannot be returned.",
+      "passed": true,
+      "detail": "judge_score=5/5 (min 4): Mock judge: matches the passage.",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 79,
+        "output_tokens": 10
+      },
+      "judge_score": 5,
+      "judge_reason": "Mock judge: matches the passage.",
+      "judge_usage": {
+        "input_tokens": 122,
+        "output_tokens": 5
+      }
+    },
+    {
+      "id": "FT003",
+      "scorer": "faithfulness",
+      "tags": [
+        "faithfulness"
+      ],
+      "prompt": "Does Acme offer free return shipping?",
+      "context": "Acme Corp's return policy: Items can be returned within 30 days of purchase with a receipt. Opened software cannot be returned. Refunds are issued to the original payment method within 5 business days.",
+      "response": "Yes, Acme offers free return shipping on all orders.",
+      "passed": false,
+      "detail": "judge_score=1/5 (min 4): Mock judge: claims free return shipping, which the passage never states.",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 80,
+        "output_tokens": 9
+      },
+      "judge_score": 1,
+      "judge_reason": "Mock judge: claims free return shipping, which the passage never states.",
+      "judge_usage": {
+        "input_tokens": 122,
+        "output_tokens": 11
+      }
+    },
+    {
+      "id": "FT004",
+      "scorer": "faithfulness",
+      "tags": [
+        "faithfulness"
+      ],
+      "prompt": "How long do refunds take to arrive?",
+      "context": "Acme Corp's return policy: Items can be returned within 30 days of purchase with a receipt. Opened software cannot be returned. Refunds are issued to the original payment method within 5 business days.",
+      "response": "Refunds are issued to the original payment method within 5 business days.",
+      "passed": true,
+      "detail": "judge_score=5/5 (min 4): Mock judge: matches the passage.",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 81,
+        "output_tokens": 12
+      },
+      "judge_score": 5,
+      "judge_reason": "Mock judge: matches the passage.",
+      "judge_usage": {
+        "input_tokens": 126,
+        "output_tokens": 5
+      }
+    },
+    {
+      "id": "FT005",
+      "scorer": "faithfulness",
+      "tags": [
+        "faithfulness"
+      ],
+      "prompt": "How much does a library card cost for someone who does not live in town?",
+      "context": "The Riverbend Library is open Monday to Friday 9am-6pm and Saturday 10am-4pm. It is closed on Sundays. Library cards are free for residents; non-residents pay $25 per year.",
+      "response": "Non-residents pay $25 per year for a library card.",
+      "passed": true,
+      "detail": "judge_score=5/5 (min 4): Mock judge: matches the passage.",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 84,
+        "output_tokens": 9
+      },
+      "judge_score": 5,
+      "judge_reason": "Mock judge: matches the passage.",
+      "judge_usage": {
+        "input_tokens": 126,
+        "output_tokens": 5
+      }
+    },
+    {
+      "id": "FT006",
+      "scorer": "faithfulness",
+      "tags": [
+        "faithfulness"
+      ],
+      "prompt": "Does the library offer free Wi-Fi?",
+      "context": "The Riverbend Library is open Monday to Friday 9am-6pm and Saturday 10am-4pm. It is closed on Sundays. Library cards are free for residents; non-residents pay $25 per year.",
+      "response": "The passage does not say whether the library offers Wi-Fi.",
+      "passed": true,
+      "detail": "judge_score=5/5 (min 4): Mock judge: says the passage does not cover Wi-Fi instead of guessing.",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 75,
+        "output_tokens": 10
+      },
+      "judge_score": 5,
+      "judge_reason": "Mock judge: says the passage does not cover Wi-Fi instead of guessing.",
+      "judge_usage": {
+        "input_tokens": 118,
+        "output_tokens": 12
+      }
+    }
+  ]
+}

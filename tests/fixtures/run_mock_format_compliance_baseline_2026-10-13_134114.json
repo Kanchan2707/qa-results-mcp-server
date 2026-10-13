@@ -1,0 +1,76 @@
+{
+  "mode": "mock",
+  "suite": "format_compliance.yaml",
+  "model": "mock-no-api-call",
+  "system_prompt_name": "baseline",
+  "system_prompt": "You are a helpful assistant. Answer the user's question accurately and follow any formatting instructions exactly.",
+  "run_timestamp": "2026-10-13T17:41:14.607183+00:00",
+  "total_tests": 4,
+  "passed": 4,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "by_tag": {},
+  "metrics": {},
+  "results": [
+    {
+      "id": "FC001",
+      "scorer": "json_valid",
+      "tags": [],
+      "prompt": "Return a JSON object with exactly two keys, \"name\" and \"age\", for a fictional person. Output only the JSON.",
+      "context": null,
+      "response": "{\"name\": \"Asha Rao\", \"age\": 34}",
+      "passed": true,
+      "detail": "valid JSON with keys ['name', 'age']",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 35,
+        "output_tokens": 5
+      }
+    },
+    {
+      "id": "FC002",
+      "scorer": "regex_match",
+      "tags": [],
+      "prompt": "Write the date January 5, 2024 in YYYY-MM-DD format. Output only the date.",
+      "context": null,
+      "response": "2024-01-05",
+      "passed": true,
+      "detail": "pattern /^\\d{4}-\\d{2}-\\d{2}$/ matched",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 29,
+        "output_tokens": 1
+      }
+    },
+    {
+      "id": "FC003",
+      "scorer": "contains_all",
+      "tags": [],
+      "prompt": "List the three primary colors, separated by commas, with no other text.",
+      "context": null,
+      "response": "Red, Blue, Yellow",
+      "passed": true,
+      "detail": "all expected items present",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 28,
+        "output_tokens": 3
+      }
+    },
+    {
+      "id": "FC004",
+      "scorer": "not_contains",
+      "tags": [],
+      "prompt": "Write a one-sentence greeting for a customer named Priya. Do not use exclamation marks.",
+      "context": null,
+      "response": "Hello Priya, welcome back and thank you for contacting us.",
+      "passed": true,
+      "detail": "no forbidden content found",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 30,
+        "output_tokens": 10
+      }
+    }
+  ]
+}

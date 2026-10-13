@@ -1,0 +1,76 @@
+{
+  "mode": "mock",
+  "suite": "factual_accuracy.yaml",
+  "model": "mock-no-api-call",
+  "system_prompt_name": "baseline",
+  "system_prompt": "You are a helpful assistant. Answer the user's question accurately and follow any formatting instructions exactly.",
+  "run_timestamp": "2026-10-13T17:41:14.600295+00:00",
+  "total_tests": 4,
+  "passed": 3,
+  "failed": 1,
+  "pass_rate": 0.75,
+  "by_tag": {},
+  "metrics": {},
+  "results": [
+    {
+      "id": "TC001",
+      "scorer": "exact_match",
+      "tags": [],
+      "prompt": "What is the capital of France? Answer with just the city name.",
+      "context": null,
+      "response": "Paris",
+      "passed": true,
+      "detail": "expected='Paris' actual='Paris'",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 28,
+        "output_tokens": 1
+      }
+    },
+    {
+      "id": "TC002",
+      "scorer": "exact_match",
+      "tags": [],
+      "prompt": "Name the largest planet in our solar system. Answer with just the planet name.",
+      "context": null,
+      "response": "Jupiter",
+      "passed": true,
+      "detail": "expected='Jupiter' actual='Jupiter'",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 30,
+        "output_tokens": 1
+      }
+    },
+    {
+      "id": "TC003",
+      "scorer": "word_count_max",
+      "tags": [],
+      "prompt": "Summarize in one short sentence: The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It was designed by Gustave Eiffel's company and completed in 1889.",
+      "context": null,
+      "response": "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France, designed by Gustave Eiffel's company and completed in 1889.",
+      "passed": false,
+      "detail": "word_count=25 (max allowed=20)",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 48,
+        "output_tokens": 25
+      }
+    },
+    {
+      "id": "TC004",
+      "scorer": "contains",
+      "tags": [],
+      "prompt": "What programming language is Django written in? Answer with just the language name.",
+      "context": null,
+      "response": "Python",
+      "passed": true,
+      "detail": "looking for 'Python' in response",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 29,
+        "output_tokens": 1
+      }
+    }
+  ]
+}

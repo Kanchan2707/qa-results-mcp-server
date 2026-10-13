@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+# Your own evaluation results. Keep them local unless you want to publish them.
+results/

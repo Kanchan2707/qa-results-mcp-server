@@ -1,0 +1,76 @@
+{
+  "mode": "mock",
+  "suite": "format_compliance.yaml",
+  "model": "mock-no-api-call",
+  "system_prompt_name": "friendly",
+  "system_prompt": "You are a warm, friendly assistant. Be enthusiastic and encouraging in every answer.",
+  "run_timestamp": "2026-10-13T17:41:14.690501+00:00",
+  "total_tests": 4,
+  "passed": 2,
+  "failed": 2,
+  "pass_rate": 0.5,
+  "by_tag": {},
+  "metrics": {},
+  "results": [
+    {
+      "id": "FC001",
+      "scorer": "json_valid",
+      "tags": [],
+      "prompt": "Return a JSON object with exactly two keys, \"name\" and \"age\", for a fictional person. Output only the JSON.",
+      "context": null,
+      "response": "Sure! Here is your JSON: {\"name\": \"Asha Rao\", \"age\": 34}",
+      "passed": false,
+      "detail": "response is not valid JSON",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 32,
+        "output_tokens": 10
+      }
+    },
+    {
+      "id": "FC002",
+      "scorer": "regex_match",
+      "tags": [],
+      "prompt": "Write the date January 5, 2024 in YYYY-MM-DD format. Output only the date.",
+      "context": null,
+      "response": "2024-01-05",
+      "passed": true,
+      "detail": "pattern /^\\d{4}-\\d{2}-\\d{2}$/ matched",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 26,
+        "output_tokens": 1
+      }
+    },
+    {
+      "id": "FC003",
+      "scorer": "contains_all",
+      "tags": [],
+      "prompt": "List the three primary colors, separated by commas, with no other text.",
+      "context": null,
+      "response": "Red, Blue, Yellow",
+      "passed": true,
+      "detail": "all expected items present",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 25,
+        "output_tokens": 3
+      }
+    },
+    {
+      "id": "FC004",
+      "scorer": "not_contains",
+      "tags": [],
+      "prompt": "Write a one-sentence greeting for a customer named Priya. Do not use exclamation marks.",
+      "context": null,
+      "response": "Hello Priya, welcome back, and thank you so much for contacting us!",
+      "passed": false,
+      "detail": "found forbidden: ['!']",
+      "latency_seconds": 0.05,
+      "usage": {
+        "input_tokens": 27,
+        "output_tokens": 12
+      }
+    }
+  ]
+}
